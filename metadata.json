@@ -1,17 +1,16 @@
 {
-  "name": "TEST – Postgres is working?",
   "nodes": [
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT 'PostgreSQL is alive 🎉' as status;"
+        "query": "CREATE TABLE IF NOT EXISTS coach_log (\n  id SERIAL PRIMARY KEY,\n  created_at TIMESTAMPTZ DEFAULT NOW(),\n  date DATE DEFAULT CURRENT_DATE,\n  data JSONB\n);\n\nINSERT INTO coach_log (date, data) VALUES ('1970-01-01', '{\"profile\": \"32M | goal: muscle + sub-90 half-marathon Apr 2026 | full gym + outdoor | hates burpees | old right knee | morning person\"}') ON CONFLICT DO NOTHING;"
       },
-      "name": "Test Query",
+      "name": "Create Table",
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2,
       "position": [460, 300]
     }
   ],
-  "connections": {},
-  "active": false
+  "active": false,
+  "name": "AI Coach – Setup Postgres Table"
 }
