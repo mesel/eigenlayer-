@@ -1,7 +1,17 @@
 {
-  "name": "Mossemissemass",
-  "website": "https://boligvelger.com",
-  "description": "OG validatooooor",
-  "logo": "https://pasteboard.co/3xOzZEHUJwh7.png",
-  "twitter":"https://twitter.com/TonyMus4"
+  "name": "TEST – Postgres is working?",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT 'PostgreSQL is alive 🎉' as status;"
+      },
+      "name": "Test Query",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [460, 300]
+    }
+  ],
+  "connections": {},
+  "active": false
 }
